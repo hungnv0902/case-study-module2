@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Note Type</title>
+</head>
+<body>
+<center>
+    <h1>Edit Note Type</h1>
+    <p>
+        <a href="/noteTypes">iNote list</a>
+    </p>
+    <th:block th:if="${message}">
+        <p th:text="${message}"></p>
+    </th:block>
+    <form th:action="@{/edit-noteType}" th:object="${noteType}" method="post">
+        <table>
+            <tr>
+                <td><input type="hidden" th:field="*{id}"/></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" th:field="*{name}"/></td>
+            </tr>
+        </table>
+        <input type="submit" value="Edit iNote">
+    </form>
+</center>
+</body>
+</html>

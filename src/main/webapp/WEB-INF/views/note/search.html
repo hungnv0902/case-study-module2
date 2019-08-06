@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/notes">Back to list note</a>
+<hr>
+<table border="2px" width="400px">
+    <tr>
+        <td>ID</td>
+        <td>Title</td>
+        <td>Content</td>
+        <td>Note Type</td>
+    </tr>
+
+    <tr th:each="note,rowStat : ${notes}">
+        <td th:text="${note.id}"></td>
+        <td th:text="${note.title}"></td>
+        <td th:text="${note.content}"></td>
+        <td th:text="${note.noteType.name}"></td>
+    </tr>
+
+</table>
+<div>
+    <a th:href="@{'/notes'(page=${notes.number - 1})}" th:if="${notes.hasPrevious()}">Previous</a>
+    <span th:text="${notes.number + 1}"></span>/<span th:text="${notes.totalPages}"></span>
+    <a th:href="@{'/notes'(page=${notes.number + 1})}" th:if="${notes.hasNext()}">Next</a>
+</div>
+</body>
+</html>
