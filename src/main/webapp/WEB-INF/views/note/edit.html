@@ -12,7 +12,7 @@
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
 </th:block>
-<form th:action="@{/create-note}" th:object="${note}" method="post">
+<form th:action="@{/edit-note}" th:object="${note}" method="post">
     <table>
         <tr>
             <td><input type="hidden" th:field="*{id}"/></td>

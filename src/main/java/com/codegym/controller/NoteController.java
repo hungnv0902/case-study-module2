@@ -56,7 +56,7 @@ public class NoteController {
         return modelAndView;
     }
 
-    @GetMapping("/edit-note")
+    @PostMapping("/edit-note")
     public ModelAndView editNote(@ModelAttribute("note") Note note) {
         noteService.save(note);
         ModelAndView modelAndView = new ModelAndView("/note/edit");
