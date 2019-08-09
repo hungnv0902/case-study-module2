@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <head th:replace="/note/layout :: head"></head>
     <title>Notes List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -55,4 +55,7 @@
 </center>
 
 </body>
+<center>
+    <footer th:replace="/note/layout :: footer"></footer>
+</center>
 </html>
