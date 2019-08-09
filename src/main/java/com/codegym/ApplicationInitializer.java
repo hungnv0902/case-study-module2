@@ -11,12 +11,12 @@ import javax.servlet.ServletException;
 public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{ApplicationConfig.class};
+        return new Class[]{WebSecurityConfig.class};
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{};
+        return new Class[]{ApplicationConfig.class};
     }
 
     @Override
